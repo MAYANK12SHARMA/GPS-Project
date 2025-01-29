@@ -72,3 +72,25 @@ DATABASES = {
         "OPTIONS": {"sslmode": "require"},
     }
 }
+
+
+
+# Logging configuration (optional, helps in debugging production issues)
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "file": {
+            "level": "ERROR",
+            "class": "logging.FileHandler",
+            "filename": os.path.join(BASE_DIR, "logs/django_error.log"),
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["file"],
+            "level": "ERROR",
+            "propagate": True,
+        },
+    },
+}
