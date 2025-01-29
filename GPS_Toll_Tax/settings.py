@@ -111,9 +111,14 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = "/static/"
+
+# Define where collected static files will be stored
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # Change to 'staticfiles' or another directory
+
+# Define locations of static files in your project
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),  # Adjust static files directory path
-    os.path.join(BASE_DIR, "static/Routes"),  # Adjust static files directory path
+    os.path.join(BASE_DIR, "static"),  # This should contain static assets used in development
+    os.path.join(BASE_DIR, "static/Routes"),
 ]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

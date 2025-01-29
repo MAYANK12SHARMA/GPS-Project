@@ -34,8 +34,6 @@ jobs:
 
       - name: Collect static files
         run: |
-          mkdir -p staticfiles
-          chmod 755 staticfiles
           python manage.py collectstatic --noinput
                   
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
