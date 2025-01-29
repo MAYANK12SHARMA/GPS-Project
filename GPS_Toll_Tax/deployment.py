@@ -25,10 +25,35 @@ MIDDLEWARE = [
     "allauth.account.middleware.AccountMiddleware",
 ]
 
-# Use the correct spelling for WhiteNoise
+# Stacti files work
+
+# Base directory of the project
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+# Use WhiteNoise for static file management in production
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+
+# Define static files directory for `collectstatic`
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+# Ensure additional static directories (used during development)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),  # Ensure this path exists
+    os.path.join(BASE_DIR, "static/Routes"),
+]
+
+
+# Static files URL
+STATIC_URL = "/static/"
+
+
+# Media files (uploads)
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+
 
 database = os.getenv('AZURE_POSTGRESQL_CONNECTIONSTRING' )
 
