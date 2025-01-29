@@ -30,7 +30,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-database = os.getenv('AZURE_POSTGRESQL_CONNECTION_STRING' )
+database = os.getenv('AZURE_POSTGRESQL_CONNECTIONSTRING' )
 
 
 db = dict(item.split("=") for item in database.split(" "))
