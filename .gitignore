@@ -9,6 +9,8 @@ env
 .pytest_cache
 .python
 __pycache__
+
+mayank
 *.pyc
 *.pyo
 *.pyd
